@@ -1,3 +1,4 @@
+import glob
 import os
 import sys
 import pygame
@@ -28,11 +29,13 @@ def load_map_data(map_data):
         print("file not found")
 
 
+def sortKeyFunc(s):
+    return int(os.path.basename(s)[:-4])
+
+
 class Walls:
-    def __init__(self, game, x, y):  # game is the Game class object
-        self.game = game
+    def __init__(self, x, y):  # game is the Game class object
         # self.image = pygame.Surface((TILE_SIZE, TILE_SIZE))
-        game.walls.append(self)
         self.rect = pygame.Rect(x, y, TILE_SIZE, TILE_SIZE)
         self.x = x
         self.y = y
@@ -47,8 +50,14 @@ class Game:
         self.walls = []
         self.background = pygame.image.load("Assets/background.png").convert()
         self.map_data = []
+        self.player1_img = []
+        self.player2_img = []
+        self.init_player(1)
+        self.init_player(2)
         # self.font = pygame.font.Font(None, 30)
-        self.player_1 = Player(self, 0, 0, 1)
+        self.player_1 = Player(0, 0)
+        self.player_2 = Player(0, 0)
+
         self.create_maze()
         self.game_loop()
 
@@ -68,9 +77,12 @@ class Game:
         # self.draw_grid()
         for wall in self.walls:
             pygame.draw.rect(self.screen, LIGHT_GREY, wall.rect)
-        self.player_1.player_img[self.player_1.sprite_index].set_colorkey((255, 255, 255))
+        self.player1_img[self.player_1.sprite_index].set_colorkey((255, 255, 255))
+        self.player2_img[self.player_2.sprite_index].set_colorkey((255, 255, 255))
         # print(self.player_1.sprite_index)
-        self.screen.blit(self.player_1.player_img[self.player_1.sprite_index], self.player_1.rect)
+        self.screen.blit(self.player1_img[self.player_1.sprite_index], self.player_1.rect)
+        self.screen.blit(self.player2_img[self.player_2.sprite_index], self.player_2.rect)
+
         # pygame.draw.rect(self.screen, GREEN, self.player.rect)  # player
         pygame.display.update()
 
@@ -97,7 +109,7 @@ class Game:
         for row in map_data:
             for col in row:
                 if col == "+" or col == "-" or col == "|":
-                    Walls(self, x, y)
+                    self.walls.append(Walls(x, y))
                 if col == "x":
                     # set location of player 1
                     self.player_1.set_pos(x, y)
@@ -105,7 +117,7 @@ class Game:
                 elif col == "y":
                     # spawn player 2
                     # print("player 2: ", x, y)
-                    # self.player_2.set_pos(x, y)
+                    self.player_2.set_pos(x, y)
                     pass
                 elif col == "@":
                     # spawn end target
@@ -113,6 +125,24 @@ class Game:
                 x += TILE_SIZE
             y += TILE_SIZE
             x = 0
+        self.player_1.set_walls(self.walls)
+        self.player_2.set_walls(self.walls)
+
+    # load images from directory
+    def init_player(self, mode):
+        if mode == 1:
+            directory = "Assets/Sprite/flash/*.png"
+        else:
+            directory = "Assets/Sprite/rev_flash/*.png"
+        temp_list = []
+        for image in glob.glob(directory):  # extracting all file names to temp_list
+            temp_list.append(image)
+            temp_list.sort(key=sortKeyFunc)  # sorting templist since glob doesn't return files in order
+        for image in temp_list:
+            if mode == 1:
+                self.player1_img.append(pygame.image.load(image).convert())
+            else:
+                self.player2_img.append(pygame.image.load(image).convert())
 
 
 m = Game()
