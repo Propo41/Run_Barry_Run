@@ -9,7 +9,8 @@ class Network:
         self.port = 5555  # any free ports will work. 5555 is a common port in windows
         self.address = (self.server, self.port)
         self.initial_data = self.connect()
-        print("received from server: ", self.initial_data)
+
+    # print("received from server: ", self.initial_data)
 
     # used only once during creation of this class
     # used to fetch initial values from the server
@@ -26,10 +27,10 @@ class Network:
     # sends the given data as a parameter to the server and receives back whatever is sent from it
     def send_and_receive(self, data):
         try:
-            print("sending to server: ", data)
+            # print("sending to server: ", data)
             self.client.send(pickle.dumps(data))  # send data given as a parameter to the server
             received = pickle.loads(self.client.recv(2048))  # receive whatever msg is sent from server and decode
-            print("received from server: ", received)
+            # print("received from server: ", received)
             return received
         except socket.error as e:
             print(e)

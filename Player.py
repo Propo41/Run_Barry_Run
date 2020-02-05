@@ -1,27 +1,13 @@
-import glob
-import os
-
 import pygame
 
-SCREEN_WIDTH = 1920
-SCREEN_HEIGHT = 1020
-TILE_SIZE = 30
-GRID_WIDTH = SCREEN_WIDTH / TILE_SIZE
-GRID_HEIGHT = SCREEN_HEIGHT / TILE_SIZE
-LIGHT_GREY = (77, 77, 77)
-GREEN = (0, 255, 0)
-BG_COLOUR = (255, 255, 255)
-YELLOW = (0, 150, 150)
 
-
-#
-# def sortKeyFunc(s):
-#     return int(os.path.basename(s)[:-4])
-
+# https://stackoverflow.com/questions/47391774/python-send-and-receive-objects-through-sockets/47396267
+# surface objects cannot be sent across server with pickle
 
 class Player:
-    def __init__(self, x, y):
+    def __init__(self, x, y, mode):
         self.velocity = 2
+        self.mode = mode
         # self.player_img = []
         # self.init_player(mode)
         self.rect = pygame.Rect(x, y, 55, 55)
@@ -77,16 +63,16 @@ class Player:
     #     for image in temp_list:
     #         self.player_img.append(pygame.image.load(image).convert())
 
-    def move(self, dx, dy):
+    def move(self, dx, dy, walls):
         # print("self.rect.pos: ", self.rect.x, self.rect.y)
         self.rect.x += dx
         self.rect.y += dy
-        for wall in self.walls:
+        for wall in walls:
             if self.rect.colliderect(wall.rect):
                 self.rect.x -= dx
                 self.rect.y -= dy
 
-    def player_movement(self):
+    def player_movement(self, walls):
         key = pygame.key.get_pressed()
         dx = 0
         dy = 0
@@ -108,10 +94,10 @@ class Player:
                 self.elapsed = 0
                 self.update("reset")
 
-        self.move(dx, dy)
+        self.move(dx, dy, walls)
 
     def set_pos(self, x, y):
         self.rect = pygame.Rect(x, y, 55, 55)
 
-    def set_walls(self, walls):
-        self.walls = walls
+    def render(self, screen, img):
+        screen.blit(img, (self.rect.x, self.rect.y))

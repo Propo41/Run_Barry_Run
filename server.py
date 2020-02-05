@@ -3,6 +3,7 @@ import socket
 from _thread import *
 
 from Player import Player
+from util import get_spawn_location
 
 
 class Server:
@@ -16,13 +17,13 @@ class Server:
             str(e)
         self.s.listen(2)  # listen from maximum 2 clients
         print("waiting for connection")
-        self.players = [Player(0, 0, 1), Player(0, 0, 2)]  # setting up random x,y values for now
+        pos = get_spawn_location()
+        self.players = [Player(pos[0][0], pos[0][1], 1), Player(pos[1][0], pos[1][1], 2)]  # setting up random x,y values for now
         self.current_player = 0
         self.run()
 
     def threaded_client(self, conn, current_player):
         conn.send(pickle.dumps(self.players[current_player]))  # send initial positions to client
-        reply = ""
         while True:
             try:
                 data = pickle.loads(conn.recv(2048))  # receive data from client
@@ -35,8 +36,8 @@ class Server:
                         reply = self.players[0]
                     else:
                         reply = self.players[1]
-                    print("received from client: ", data)
-                    print("sending to client: ", reply)
+                    # print("received from client: ", data)
+                    # print("sending to client: ", reply)
                 conn.sendall(pickle.dumps(reply))  # send data to clients connected
             except socket.error as e:
                 print("connection couldn't be established: ", e)
@@ -50,5 +51,6 @@ class Server:
             print("connected to: ", address)
             start_new_thread(self.threaded_client, (conn, self.current_player))
             self.current_player += 1
+
 
 server = Server()
