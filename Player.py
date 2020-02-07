@@ -1,21 +1,20 @@
 import pygame
 
-
 # https://stackoverflow.com/questions/47391774/python-send-and-receive-objects-through-sockets/47396267
 # surface objects cannot be sent across server with pickle
+from util import make_vector, SCREEN_RECT
+
 
 class Player:
     def __init__(self, x, y, mode):
         self.velocity = 2
         self.mode = mode
-        # self.player_img = []
-        # self.init_player(mode)
         self.rect = pygame.Rect(x, y, 55, 55)
         self.sprite_index = 12
         self.sprite_index_all = [0, 4, 8, 12]  # left, right, up, down
-        # self.player_current_img = self.player_img[self.sprite_index]
         # when sprite becomes stationary, the character index changes to 12. This variable is used for that
         self.elapsed = 0
+        self.enemy_pos = None  # doesnt matter what it is, as when the server starts, it's going to be filled
 
     # updates each frame in the sprite to create an animation
     def update(self, dir):
@@ -50,19 +49,6 @@ class Player:
             self.sprite_index_all[3] = 12  # start of down sprite
             self.sprite_index = 12
 
-    # # load images from directory
-    # def init_player(self, mode):
-    #     if mode == 1:
-    #         directory = "Assets/Sprite/flash/*.png"
-    #     else:
-    #         directory = "Assets/Sprite/rev_flash/*.png"
-    #     temp_list = []
-    #     for image in glob.glob(directory):  # extracting all file names to temp_list
-    #         temp_list.append(image)
-    #         temp_list.sort(key=sortKeyFunc)  # sorting templist since glob doesn't return files in order
-    #     for image in temp_list:
-    #         self.player_img.append(pygame.image.load(image).convert())
-
     def move(self, dx, dy, walls):
         # print("self.rect.pos: ", self.rect.x, self.rect.y)
         self.rect.x += dx
@@ -71,7 +57,11 @@ class Player:
             if self.rect.colliderect(wall.rect):
                 self.rect.x -= dx
                 self.rect.y -= dy
+        # add code for boundary condition
+        self.rect.clamp_ip(SCREEN_RECT)
+        return make_vector((self.rect.x, self.rect.y))
 
+    # returns the final position of the player after calculating wall collisions in vector form
     def player_movement(self, walls):
         key = pygame.key.get_pressed()
         dx = 0
@@ -94,10 +84,10 @@ class Player:
                 self.elapsed = 0
                 self.update("reset")
 
-        self.move(dx, dy, walls)
+        return self.move(dx, dy, walls)
 
-    def set_pos(self, x, y):
-        self.rect = pygame.Rect(x, y, 55, 55)
+    def set_enemy_goal(self, pos):
+        self.enemy_goal = pos
 
     def render(self, screen, img):
         screen.blit(img, (self.rect.x, self.rect.y))

@@ -1,9 +1,14 @@
+import math
 import os
 
 import pygame
 
-SCREEN_WIDTH = 1920
-SCREEN_HEIGHT = 1020
+#
+# SCREEN_WIDTH = 1920
+# SCREEN_HEIGHT = 1020
+SCREEN_WIDTH = 1366
+SCREEN_HEIGHT = 768
+SCREEN_RECT = pygame.Rect(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)
 TILE_SIZE = 30
 GRID_WIDTH = SCREEN_WIDTH / TILE_SIZE
 GRID_HEIGHT = SCREEN_HEIGHT / TILE_SIZE
@@ -15,6 +20,36 @@ BG_COLOUR = (255, 255, 255)
 
 CLOCK = pygame.time.Clock()
 FPS = 60
+
+
+def vec2int(v):
+    return int(v.x), int(v.y)
+
+
+def spawn_enemy(map_data):
+    map_data = load_map_data(map_data)
+    x = y = 0
+    for row in map_data:
+        for col in row:
+            if col == "e":
+                # spawn enemy
+                return x, y
+            x += TILE_SIZE
+        y += TILE_SIZE
+        x = 0
+
+
+def distance_from_goal(neighbor, end_node):
+    t = pow((end_node.y - neighbor.y), 2) + pow((end_node.x - neighbor.x), 2)
+    if t < 0:
+        t *= -1
+    return math.sqrt(t)
+
+
+def make_vector(point):
+    vec = pygame.Vector2()
+    vec.xy = point[0], point[1]
+    return vec
 
 
 # empty list map_data is sent
