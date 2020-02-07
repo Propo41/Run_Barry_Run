@@ -161,7 +161,6 @@
         </serviceView>
       </list>
     </option>
-    <option name="showServicesTree" value="false" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -189,26 +188,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1580543432764" />
-    <state width="1899" height="165" key="GridCell.Tab.0.bottom" timestamp="1581045947491">
+    <state width="1899" height="165" key="GridCell.Tab.0.bottom" timestamp="1581089787860">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1345" height="165" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1366.305.1366.728@-1366.305.1366.728" timestamp="1581043763772" />
-    <state width="1899" height="165" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1581045947491" />
-    <state width="1899" height="165" key="GridCell.Tab.0.center" timestamp="1581045947491">
+    <state width="1899" height="165" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1581089787860" />
+    <state width="1899" height="165" key="GridCell.Tab.0.center" timestamp="1581089787860">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1345" height="165" key="GridCell.Tab.0.center/0.0.1920.1040/-1366.305.1366.728@-1366.305.1366.728" timestamp="1581043763771" />
-    <state width="1899" height="165" key="GridCell.Tab.0.center/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1581045947491" />
-    <state width="1899" height="165" key="GridCell.Tab.0.left" timestamp="1581045947491">
+    <state width="1899" height="165" key="GridCell.Tab.0.center/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1581089787860" />
+    <state width="1899" height="165" key="GridCell.Tab.0.left" timestamp="1581089787860">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1345" height="165" key="GridCell.Tab.0.left/0.0.1920.1040/-1366.305.1366.728@-1366.305.1366.728" timestamp="1581043763771" />
-    <state width="1899" height="165" key="GridCell.Tab.0.left/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1581045947491" />
-    <state width="1899" height="165" key="GridCell.Tab.0.right" timestamp="1581045947491">
+    <state width="1899" height="165" key="GridCell.Tab.0.left/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1581089787860" />
+    <state width="1899" height="165" key="GridCell.Tab.0.right" timestamp="1581089787860">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1345" height="165" key="GridCell.Tab.0.right/0.0.1920.1040/-1366.305.1366.728@-1366.305.1366.728" timestamp="1581043763771" />
-    <state width="1899" height="165" key="GridCell.Tab.0.right/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1581045947491" />
+    <state width="1899" height="165" key="GridCell.Tab.0.right/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1581089787860" />
     <state width="1899" height="348" key="GridCell.Tab.1.bottom" timestamp="1580553369465">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -229,10 +228,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="161" key="SettingsEditor/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1580537913242" />
-    <state x="656" y="342" key="com.intellij.ide.util.TipDialog" timestamp="1581042980517">
+    <state x="656" y="342" key="com.intellij.ide.util.TipDialog" timestamp="1581080535320">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="656" y="342" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1581042980517" />
+    <state x="656" y="342" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1581080535320" />
     <state x="246" y="174" width="1382" height="817" key="dock-window-1" timestamp="1580396316118">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

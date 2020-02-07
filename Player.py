@@ -4,6 +4,9 @@ import pygame
 # surface objects cannot be sent across server with pickle
 from util import make_vector, SCREEN_RECT
 
+pygame.mixer.init()
+wall_collision_sound = pygame.mixer.Sound('Assets/music/wall_hit.wav')
+
 
 class Player:
     def __init__(self, x, y, mode):
@@ -57,6 +60,7 @@ class Player:
             if self.rect.colliderect(wall.rect):
                 self.rect.x -= dx
                 self.rect.y -= dy
+                wall_collision_sound.play()
         # add code for boundary condition
         self.rect.clamp_ip(SCREEN_RECT)
         return make_vector((self.rect.x, self.rect.y))

@@ -1,0 +1,6 @@
+new maps can be generated from -> http://www.delorie.com/game-room/mazes/genmaze.cgi
+with the following settings: 
+Number of cells across (1..N): 15
+Number of cells up/down (1..N): 8
+Width of each cell (2..N): 3
+Height of each cell (2..N): 3

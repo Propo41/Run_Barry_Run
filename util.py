@@ -1,3 +1,4 @@
+import glob
 import math
 import os
 
@@ -20,6 +21,18 @@ BG_COLOUR = (255, 255, 255)
 
 CLOCK = pygame.time.Clock()
 FPS = 60
+
+
+# load images from directory
+def load_images(directory):
+    temp_list = []
+    sorted_img = []
+    for image in glob.glob(directory):  # extracting all file names to temp_list
+        temp_list.append(image)
+        temp_list.sort(key=sortKeyFunc)  # sorting templist since glob doesn't return files in order
+    for image in temp_list:
+        sorted_img.append(pygame.image.load(image).convert())
+    return sorted_img
 
 
 def vec2int(v):
@@ -55,7 +68,7 @@ def make_vector(point):
 # empty list map_data is sent
 def load_map_data(map_data):
     try:
-        with open("Assets/map_data.txt", "rt") as f:
+        with open("Assets/maps/map_1.txt", "rt") as f:
             for line in f:
                 map_data.append(line)
             return map_data
