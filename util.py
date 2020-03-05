@@ -8,11 +8,15 @@ import pygame
 # SCREEN_WIDTH = 1920
 # SCREEN_HEIGHT = 1020
 SCREEN_WIDTH = 1366
-SCREEN_HEIGHT = 768
+SCREEN_HEIGHT = 750
 SCREEN_RECT = pygame.Rect(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)
 TILE_SIZE = 30
 GRID_WIDTH = SCREEN_WIDTH / TILE_SIZE
 GRID_HEIGHT = SCREEN_HEIGHT / TILE_SIZE
+
+# button states
+START = 1
+EXIT = 2
 
 LIGHT_GREY = (225, 225, 225)
 GREEN = (0, 255, 0)
@@ -35,10 +39,27 @@ def load_images(directory):
     return sorted_img
 
 
+# load single image from directory
+
+def load_image(directory):
+    return pygame.image.load(directory).convert()
+
+
+def button_mechanics(target):
+    mouse_pos = pygame.mouse.get_pos()
+    for img in target:
+        if img.rect.collidepoint(mouse_pos):
+            # print("mouse hovered")
+            img.hovered = True
+        else:
+            img.hovered = False
+
+
 def vec2int(v):
     return int(v.x), int(v.y)
 
 
+#  spawns enemy at x,y coordinate found from map_data.txt.
 def spawn_enemy(map_data):
     map_data = load_map_data(map_data)
     x = y = 0

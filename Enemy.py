@@ -29,8 +29,8 @@ class Enemy:
     def render_enemy(self, screen, enemy_pos):
         # self.images[self.image_index].set_colorkey((255, 255, 255))
         # screen.blit(self.images[self.image_index], (enemy_pos[0], enemy_pos[1]))
-
-        pygame.draw.rect(screen, (0,0,0), (enemy_pos[0], enemy_pos[1], self.width, self.height), 0)
+        #print("enemy pos: ", enemy_pos)
+        pygame.draw.rect(screen, (0, 0, 0), (enemy_pos[0], enemy_pos[1], self.width, self.height), 0)
 
     def get_pos(self):
         return self.rect.x, self.rect.y
@@ -38,6 +38,9 @@ class Enemy:
     # thread
     # uses modified bfs to search the player
     # if player is caught, then the thread sleeps for 5 sec before chasing again
+    # TODO: change algorithm to a multiple source shortest path or A* path finding
+    # TODO: try using one which doesnt require a multi thread
+
     def enemy_movement(self, void):
         while len(self.frontier) > 0:
             time.sleep(0.3)

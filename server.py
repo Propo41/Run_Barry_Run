@@ -18,7 +18,8 @@ class Server:
         self.s.listen(2)  # listen from maximum 2 clients
         print("waiting for connection")
         pos = get_spawn_location()
-        self.players = [Player(pos[0][0], pos[0][1], 1), Player(pos[1][0], pos[1][1], 2)]  # setting up random x,y values for now
+        self.players = [Player(pos[0][0], pos[0][1], 1), Player(pos[1][0], pos[1][1], 2)]  # setting up the x,y
+        # co-ordinates of the players
         self.current_player = 0
         self.run()
 
@@ -50,6 +51,8 @@ class Server:
             conn, address = self.s.accept()  # wait for a connection to establish, and accept it
             print("connected to: ", address)
             start_new_thread(self.threaded_client, (conn, self.current_player))
+            # send current player to Game. If current player = 0 show initial screen. If current player
+            self.players[self.current_player].is_connected = True
             self.current_player += 1
 
 

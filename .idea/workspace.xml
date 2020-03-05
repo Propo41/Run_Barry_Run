@@ -27,7 +27,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.Game">
+  <component name="RunManager" selected="Python.Start_Game (1)">
     <configuration name="Enemy" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Run Barry Run" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -70,7 +70,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Player" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="Start_Game (1)" type="PythonConfigurationType" factoryName="Python" singleton="false" temporary="true" nameIsGenerated="true">
       <module name="Run Barry Run" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -82,7 +82,28 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Player.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Start_Game.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Start_Game" type="PythonConfigurationType" factoryName="Python" singleton="false" temporary="true" nameIsGenerated="true">
+      <module name="Run Barry Run" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="C:\Users\Swapnil\PycharmProjects\Run Barry Run\Start_Game.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -112,41 +133,20 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Run Barry Run" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="Python.Game" />
-      <item itemvalue="Python.Player" />
       <item itemvalue="Python.server" />
-      <item itemvalue="Python.test" />
       <item itemvalue="Python.Enemy" />
+      <item itemvalue="Python.Start_Game" />
+      <item itemvalue="Python.Start_Game (1)" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Game" />
+        <item itemvalue="Python.Start_Game (1)" />
         <item itemvalue="Python.server" />
+        <item itemvalue="Python.Start_Game" />
+        <item itemvalue="Python.Game" />
         <item itemvalue="Python.Enemy" />
-        <item itemvalue="Python.Player" />
-        <item itemvalue="Python.test" />
       </list>
     </recent_temporary>
   </component>
@@ -176,38 +176,46 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1580656035839">
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583435728078">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1580656035839" />
-    <state x="701" y="323" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1580997838865">
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1583435728078" />
+    <state x="701" y="323" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1583423463493">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="701" y="323" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1580997838865" />
+    <state x="701" y="323" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1583423463493" />
+    <state x="505" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1583425115091">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="505" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1583425115091" />
     <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1580543432764">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1580543432764" />
-    <state width="1899" height="165" key="GridCell.Tab.0.bottom" timestamp="1581089787860">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1583418454784">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1583418454784" />
+    <state width="1899" height="156" key="GridCell.Tab.0.bottom" timestamp="1583439913222">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1345" height="165" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1366.305.1366.728@-1366.305.1366.728" timestamp="1581043763772" />
-    <state width="1899" height="165" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1581089787860" />
-    <state width="1899" height="165" key="GridCell.Tab.0.center" timestamp="1581089787860">
+    <state width="1899" height="156" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1583439913222" />
+    <state width="1899" height="156" key="GridCell.Tab.0.center" timestamp="1583439913222">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1345" height="165" key="GridCell.Tab.0.center/0.0.1920.1040/-1366.305.1366.728@-1366.305.1366.728" timestamp="1581043763771" />
-    <state width="1899" height="165" key="GridCell.Tab.0.center/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1581089787860" />
-    <state width="1899" height="165" key="GridCell.Tab.0.left" timestamp="1581089787860">
+    <state width="1899" height="156" key="GridCell.Tab.0.center/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1583439913222" />
+    <state width="1899" height="156" key="GridCell.Tab.0.left" timestamp="1583439913222">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1345" height="165" key="GridCell.Tab.0.left/0.0.1920.1040/-1366.305.1366.728@-1366.305.1366.728" timestamp="1581043763771" />
-    <state width="1899" height="165" key="GridCell.Tab.0.left/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1581089787860" />
-    <state width="1899" height="165" key="GridCell.Tab.0.right" timestamp="1581089787860">
+    <state width="1899" height="156" key="GridCell.Tab.0.left/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1583439913222" />
+    <state width="1899" height="156" key="GridCell.Tab.0.right" timestamp="1583439913222">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1345" height="165" key="GridCell.Tab.0.right/0.0.1920.1040/-1366.305.1366.728@-1366.305.1366.728" timestamp="1581043763771" />
-    <state width="1899" height="165" key="GridCell.Tab.0.right/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1581089787860" />
+    <state width="1899" height="156" key="GridCell.Tab.0.right/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1583439913222" />
     <state width="1899" height="348" key="GridCell.Tab.1.bottom" timestamp="1580553369465">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -228,10 +236,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="161" key="SettingsEditor/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1580537913242" />
-    <state x="656" y="342" key="com.intellij.ide.util.TipDialog" timestamp="1581080535320">
+    <state x="656" y="342" key="com.intellij.ide.util.TipDialog" timestamp="1583435678277">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="656" y="342" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1581080535320" />
+    <state x="656" y="342" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1583435678277" />
     <state x="246" y="174" width="1382" height="817" key="dock-window-1" timestamp="1580396316118">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

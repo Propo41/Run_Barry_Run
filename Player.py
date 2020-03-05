@@ -17,7 +17,13 @@ class Player:
         self.sprite_index_all = [0, 4, 8, 12]  # left, right, up, down
         # when sprite becomes stationary, the character index changes to 12. This variable is used for that
         self.elapsed = 0
-        self.enemy_pos = None  # doesnt matter what it is, as when the server starts, it's going to be filled
+        self.enemy_pos = (50, 50)  # doesnt matter what it is, as when the server starts, it's going to be filled
+
+        # used since online one object of player class is being used to communicate trhough the server
+        self.game_over = False
+        self.victory = False
+        self.is_connected = False
+        self.is_start_clicked = False
 
     # updates each frame in the sprite to create an animation
     def update(self, dir):
