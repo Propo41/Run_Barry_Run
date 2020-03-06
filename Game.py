@@ -1,10 +1,11 @@
 import os
 import sys
+import time
 
 import pygame
 
 from Enemy import Enemy
-from Environment import Walls, WeightedGrid, dijkstra_search
+from Graph import Walls, WeightedGrid, dijkstra_search
 from util import load_map_data, TILE_SIZE, SCREEN_WIDTH, SCREEN_HEIGHT, CLOCK, FPS, LIGHT_GREY, GREEN, \
     make_vector, spawn_enemy, load_images
 
@@ -162,6 +163,8 @@ class Game:
                         self.target_down = False
                         self.target_up = True
             if event.type == VICTORY_WINDOW and (self.player_1.game_over or self.player_2.game_over):
+                time.sleep(5)
+                print("exiting game. Hope you had fun!")
                 sys.exit(0)
 
     # iterates through text file given and detects game objects

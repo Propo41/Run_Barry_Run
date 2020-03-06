@@ -1,10 +1,9 @@
 import time
 from _thread import start_new_thread
-from collections import deque
 
 import pygame
 
-from Environment import dijkstra_search
+from Graph import dijkstra_search
 from util import vec2int, make_vector, load_images, TILE_SIZE
 
 
@@ -39,10 +38,11 @@ class Enemy:
         start_new_thread(self.enemy_movement, (None,))
 
     def render_enemy(self, screen, enemy_pos):
-        self.images[self.image_index].set_colorkey((255, 255, 255))
+        # self.images[self.image_index].set_colorkey((255, 255, 255))
+        # self.images[self.image_index].set_colorkey((0, 0, 0))
         screen.blit(self.images[self.image_index], (enemy_pos[0], enemy_pos[1]))
         # print("enemy pos: ", enemy_pos)
-        #pygame.draw.rect(screen, (0, 0, 0), (enemy_pos[0], enemy_pos[1], self.width, self.height), 0)
+        # pygame.draw.rect(screen, (38, 38, 38), (enemy_pos[0], enemy_pos[1], self.width, self.height), 0)
 
     def get_pos(self):
         return self.rect.x, self.rect.y
