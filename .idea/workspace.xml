@@ -28,27 +28,6 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunManager" selected="Python.Start_Game (1)">
-    <configuration name="Enemy" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Run Barry Run" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Enemy.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="Game" type="PythonConfigurationType" factoryName="Python" singleton="false" temporary="true">
       <module name="Run Barry Run" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -133,20 +112,41 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Run Barry Run" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Python.Game" />
       <item itemvalue="Python.server" />
-      <item itemvalue="Python.Enemy" />
       <item itemvalue="Python.Start_Game" />
       <item itemvalue="Python.Start_Game (1)" />
+      <item itemvalue="Python.test" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.Start_Game (1)" />
         <item itemvalue="Python.server" />
-        <item itemvalue="Python.Start_Game" />
         <item itemvalue="Python.Game" />
-        <item itemvalue="Python.Enemy" />
+        <item itemvalue="Python.test" />
+        <item itemvalue="Python.Start_Game" />
       </list>
     </recent_temporary>
   </component>
@@ -196,26 +196,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1583418454784" />
-    <state width="1899" height="156" key="GridCell.Tab.0.bottom" timestamp="1583439913222">
+    <state width="1899" height="156" key="GridCell.Tab.0.bottom" timestamp="1583488086573">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1345" height="165" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1366.305.1366.728@-1366.305.1366.728" timestamp="1581043763772" />
-    <state width="1899" height="156" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1583439913222" />
-    <state width="1899" height="156" key="GridCell.Tab.0.center" timestamp="1583439913222">
+    <state width="1899" height="156" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1583488086573" />
+    <state width="1899" height="156" key="GridCell.Tab.0.center" timestamp="1583488086573">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1345" height="165" key="GridCell.Tab.0.center/0.0.1920.1040/-1366.305.1366.728@-1366.305.1366.728" timestamp="1581043763771" />
-    <state width="1899" height="156" key="GridCell.Tab.0.center/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1583439913222" />
-    <state width="1899" height="156" key="GridCell.Tab.0.left" timestamp="1583439913222">
+    <state width="1899" height="156" key="GridCell.Tab.0.center/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1583488086573" />
+    <state width="1899" height="156" key="GridCell.Tab.0.left" timestamp="1583488086573">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1345" height="165" key="GridCell.Tab.0.left/0.0.1920.1040/-1366.305.1366.728@-1366.305.1366.728" timestamp="1581043763771" />
-    <state width="1899" height="156" key="GridCell.Tab.0.left/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1583439913222" />
-    <state width="1899" height="156" key="GridCell.Tab.0.right" timestamp="1583439913222">
+    <state width="1899" height="156" key="GridCell.Tab.0.left/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1583488086573" />
+    <state width="1899" height="156" key="GridCell.Tab.0.right" timestamp="1583488086573">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1345" height="165" key="GridCell.Tab.0.right/0.0.1920.1040/-1366.305.1366.728@-1366.305.1366.728" timestamp="1581043763771" />
-    <state width="1899" height="156" key="GridCell.Tab.0.right/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1583439913222" />
+    <state width="1899" height="156" key="GridCell.Tab.0.right/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1583488086573" />
     <state width="1899" height="348" key="GridCell.Tab.1.bottom" timestamp="1580553369465">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -236,10 +236,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="161" key="SettingsEditor/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1580537913242" />
-    <state x="656" y="342" key="com.intellij.ide.util.TipDialog" timestamp="1583435678277">
+    <state x="656" y="342" key="com.intellij.ide.util.TipDialog" timestamp="1583484356148">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="656" y="342" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1583435678277" />
+    <state x="656" y="342" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1583484356148" />
     <state x="246" y="174" width="1382" height="817" key="dock-window-1" timestamp="1580396316118">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
