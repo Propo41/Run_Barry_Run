@@ -4,9 +4,9 @@ import sys
 import pygame
 
 from Enemy import Enemy
-from Environment import SquareGrid, Walls, WeightedGrid, dijkstra_search
+from Environment import Walls, WeightedGrid, dijkstra_search
 from util import load_map_data, TILE_SIZE, SCREEN_WIDTH, SCREEN_HEIGHT, CLOCK, FPS, LIGHT_GREY, GREEN, \
-    make_vector, spawn_enemy, load_images, vec2int
+    make_vector, spawn_enemy, load_images
 
 # TODO: add game over music
 # TODO: add code to play in multiple maps
@@ -18,7 +18,7 @@ CHARACTER_MOVE = pygame.USEREVENT + 2
 pygame.time.set_timer(CHARACTER_MOVE, 200)
 
 VICTORY_WINDOW = pygame.USEREVENT + 3
-pygame.time.set_timer(VICTORY_WINDOW, 1000)
+pygame.time.set_timer(VICTORY_WINDOW, 5000)
 
 
 class Game:
@@ -70,7 +70,11 @@ class Game:
 
         # enemy stuff
         enemy_pos = spawn_enemy(self.map_data)
-        print("enemy pos: ", enemy_pos)
+
+        self.goal = make_vector(self.player_1.rect)
+
+        self.start = make_vector(enemy_pos)
+        self.path = dijkstra_search(self.g, self.goal, self.start)
 
         # spawns enemy and it immediately starts to follow player on a different thread
         self.enemy = Enemy(enemy_pos, make_vector((self.player_1.rect.x, self.player_1.rect.y)), self.g, self.walls)
@@ -78,18 +82,6 @@ class Game:
         # music stuff
         pygame.mixer.music.load('Assets/music/flash_theme.wav')
         pygame.mixer.music.play(-1)
-
-        # test - dijkstra's algorithm
-        self.goal = make_vector((510, 390))
-        self.start = make_vector((0, 30))
-        self.path = dijkstra_search(self.g, self.goal, self.start)
-        print("path: ", self.path)
-
-        self.arrows = {}
-        arrow_img = pygame.image.load('arrowRight.png').convert_alpha()
-        arrow_img = pygame.transform.scale(arrow_img, (50, 50))
-        for dir in [(30, 0), (0, 30), (-30, 0), (0, -30), (30, 30), (-30, 30), (30, -30), (-30, -30)]:
-            self.arrows[dir] = pygame.transform.rotate(arrow_img, make_vector(dir).angle_to(make_vector((30, 0))))
 
         self.game_loop()
 
@@ -117,25 +109,11 @@ class Game:
         else:
             self.player_1.velocity = 2
 
-    def draw_path(self):
-        # draw path from start to goal
-        current = self.start + self.path[vec2int(self.start)]
-        while current != self.goal:
-            x = current.x
-            y = current.y
-            # print("printing path: x = ", x, " y = ", y)
-            # img = self.arrows[vec2int(self.path[(current.x, current.y)])]
-            # r = img.get_rect(center=(x, y))
-            # self.screen.blit(img, r)
-            pygame.draw.rect(self.screen, GREEN, (x, y, 30, 30), 0)
-            # find next in path
-            current = current + self.path[vec2int(current)]
-
     def display(self):
         if not self.game_over:
             self.render_world()
             self.render_characters()
-            self.draw_path()
+            # self.draw_path()
         else:  # IF GAME OVER
             if self.player_1.mode == 1 and self.player_1.victory:
                 # if player 1 wins
@@ -155,7 +133,7 @@ class Game:
 
     def event_handling(self):
         self.mpos = pygame.mouse.get_pos()
-        print("mouse: ", self.mpos)
+        # print("mouse: ", self.mpos)
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 self.running = False
@@ -213,6 +191,8 @@ class Game:
 
     def character_mechanics(self):
         player_current_pos = self.player_1.player_movement(self.walls)
+        self.enemy.update_player_pos(player_current_pos)
+
         # if it's player 1, then fetch position of enemy and player
         if self.player_1.mode == 1:
             self.enemy.goal = player_current_pos
@@ -251,7 +231,7 @@ class Game:
 
     def render_world(self):
         self.screen.blit(self.background, (0, 0))
-        self.draw_grid()
+        # self.draw_grid()
         self.g.draw(self.screen)
 
 # m = Game()

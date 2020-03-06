@@ -19,8 +19,6 @@ class SquareGrid:
         self.height = height
         self.walls = []
         self.connections = [make_vector((30, 0)), make_vector((-30, 0)), make_vector((0, 30)), make_vector((0, -30))]
-        # comment/uncomment this for diagonals:
-        self.connections += [make_vector((30, 0)), make_vector((-30, 0)), make_vector((0, 30)), make_vector((0, -30))]
 
     def in_bounds(self, node):
         return 0 <= node.x < self.width and 0 <= node.y < self.height
@@ -74,24 +72,25 @@ class PriorityQueue:
         return len(self.nodes) == 0
 
 
+# given a source and destination, finds the shortest path
 def dijkstra_search(graph, start, end):
-    frontier = PriorityQueue()
-    frontier.put(vec2int(start), 0)
+    p_queue = PriorityQueue()
+    p_queue.put(vec2int(start), 0)
     path = {}
     cost = {}
     path[vec2int(start)] = None
     cost[vec2int(start)] = 0
 
-    while not frontier.empty():
-        current = frontier.get()
+    while not p_queue.empty():
+        current = p_queue.get()
         if current == end:
             break
-        for next in graph.find_neighbors(make_vector(current)):
-            next = vec2int(next)
-            next_cost = cost[current] + graph.cost(current, next)
-            if next not in cost or next_cost < cost[next]:
-                cost[next] = next_cost
+        for neighbor in graph.find_neighbors(make_vector(current)):
+            neighbor = vec2int(neighbor)
+            next_cost = cost[current] + graph.cost(current, neighbor)
+            if neighbor not in cost or next_cost < cost[neighbor]:
+                cost[neighbor] = next_cost
                 priority = next_cost
-                frontier.put(next, priority)
-                path[next] = make_vector(current) - make_vector(next)
+                p_queue.put(neighbor, priority)
+                path[neighbor] = make_vector(current) - make_vector(neighbor)
     return path

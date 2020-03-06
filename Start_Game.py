@@ -23,6 +23,7 @@ class Button:
         self.state = state
 
 
+# entry point of game. Starts with the menu. After Start is clicked Game object is created
 class Start_Game:
     def __init__(self):
         pygame.init()

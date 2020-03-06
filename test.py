@@ -190,6 +190,7 @@ while running:
                 else:
                     g.walls.append(mpos)
             if event.button == 2:
+                print(mpos)
                 start = mpos
             if event.button == 3:
                 goal = mpos

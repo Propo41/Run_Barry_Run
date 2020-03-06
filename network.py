@@ -2,6 +2,8 @@ import pickle
 import socket
 
 
+# used as an intermediary between server and client
+
 class Network:
     def __init__(self):
         self.client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
