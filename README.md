@@ -7,3 +7,5 @@ Description: A PvP multiplayer maze solving game where the players have to compe
 Module: Pygame and pickle (for networking)
  
 Used Dijkstra’s shortest path algorithm for the bot, which apparently doesn’t have a proper image :3 as I couldn't find one suitable to fit in the grid.
+
+Gameplay: https://youtu.be/kSGp81IjQZk
