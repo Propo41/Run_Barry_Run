@@ -1,3 +1,4 @@
+import math
 import time
 from _thread import start_new_thread
 
@@ -9,6 +10,13 @@ from util import vec2int, make_vector, load_images, TILE_SIZE
 
 # TODO: add more enemies on triggers
 
+def euclidean_distance(start, goal):
+    distance = math.sqrt(pow(goal[1] - start[1], 2) + pow(goal[0] - start[0], 2))
+    print("Euclidean distance from x to y: ", distance)
+    return distance
+    pass
+
+
 class Enemy:
     def __init__(self, pos, goal, g, walls):
         # initialization
@@ -18,6 +26,7 @@ class Enemy:
         self.height = 30
         self.walls = walls
         self.g = g
+        self.neg_speed = 0.5  # higher the value, lower the speed
 
         self.rect = pygame.Rect(self.x, self.y, self.width, self.height)
 
@@ -61,15 +70,15 @@ class Enemy:
                 print("MOVE!")
                 time.sleep(1)
                 continue
-            # print("path: ", self.path[vec2int(self.start)])
             while current != self.goal:
                 if self.update_pos:
                     self.update_pos = False
                     break
                 # print("current: ", current, " self.goal: ", self.goal)
-                time.sleep(0.3)
+                time.sleep(self.neg_speed)
                 self.rect.x = current.x
                 self.rect.y = current.y
+                self.change_speed()
                 # find next in path
                 try:
                     current = current + self.path[vec2int(current)]
@@ -86,3 +95,9 @@ class Enemy:
     def update_player_pos(self, player_current_pos):
         self.update_pos = True
         self.goal = (player_current_pos // TILE_SIZE) * 30
+
+    def change_speed(self):
+        if euclidean_distance(self.start, self.goal) > 150:
+            self.neg_speed = 0.2  # if distance between enemy and player is high, then increase speed
+        else:
+            self.neg_speed = 0.4  # else reduce speed

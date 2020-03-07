@@ -258,7 +258,7 @@ class Game:
 
     def check_game_state(self):
         if self.player_1.game_over:
-            time.sleep(5)
+            time.sleep(6)
             print("exiting game. Hope you had fun!")
             sys.exit(0)
             pass
