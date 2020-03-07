@@ -8,4 +8,9 @@ Module: Pygame and pickle (for networking)
  
 Used Dijkstra’s shortest path algorithm for the bot, which apparently doesn’t have a proper image :3 as I couldn't find one suitable to fit in the grid.
 
+Future modifications:
+- load multiple maps 
+- add multiple enemies
+- add phasing powers to cross through n number of walls
+
 Gameplay: https://youtu.be/kSGp81IjQZk
