@@ -40,9 +40,8 @@ class Enemy:
     def render_enemy(self, screen, enemy_pos):
         # self.images[self.image_index].set_colorkey((255, 255, 255))
         # self.images[self.image_index].set_colorkey((0, 0, 0))
-        screen.blit(self.images[self.image_index], (enemy_pos[0], enemy_pos[1]))
-        # print("enemy pos: ", enemy_pos)
-        # pygame.draw.rect(screen, (38, 38, 38), (enemy_pos[0], enemy_pos[1], self.width, self.height), 0)
+        # screen.blit(self.images[self.image_index], (enemy_pos[0], enemy_pos[1]))
+        pygame.draw.rect(screen, (38, 38, 38), (enemy_pos[0], enemy_pos[1], self.width, self.height), 0)
 
     def get_pos(self):
         return self.rect.x, self.rect.y
@@ -54,14 +53,12 @@ class Enemy:
     def enemy_movement(self, void):
         while True:
             self.start = (make_vector((self.rect.x, self.rect.y)) // TILE_SIZE) * 30
-            print("start: ", self.start, " goal: ", (self.goal // TILE_SIZE) * 30)
             self.path = dijkstra_search(self.g, (self.goal // TILE_SIZE) * 30, self.start)
-            # print("path generated: ", self.path)
-            # draw path from start to goal
+
             try:
                 current = self.start + self.path[vec2int(self.start)]
             except TypeError:  # if enemy reaches player, then an exception occurs.
-                print("caught you suckaa!! MOVE!")
+                print("MOVE!")
                 time.sleep(1)
                 continue
             # print("path: ", self.path[vec2int(self.start)])

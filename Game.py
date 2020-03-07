@@ -6,8 +6,10 @@ import pygame
 
 from Enemy import Enemy
 from Graph import Walls, WeightedGrid, dijkstra_search
+from Player import Player
+from network import Network
 from util import load_map_data, TILE_SIZE, SCREEN_WIDTH, SCREEN_HEIGHT, CLOCK, FPS, LIGHT_GREY, GREEN, \
-    make_vector, spawn_enemy, load_images
+    make_vector, spawn_enemy, load_images, get_spawn_location
 
 # TODO: add game over music
 # TODO: add code to play in multiple maps
@@ -17,9 +19,6 @@ pygame.time.set_timer(CHARACTER_SPRITEINTERVAL, 600)
 
 CHARACTER_MOVE = pygame.USEREVENT + 2
 pygame.time.set_timer(CHARACTER_MOVE, 200)
-
-VICTORY_WINDOW = pygame.USEREVENT + 3
-pygame.time.set_timer(VICTORY_WINDOW, 5000)
 
 
 class Game:
@@ -50,7 +49,9 @@ class Game:
         self.target_img_back = [pygame.image.load("Assets/Sprite/barry_mom/back1.png").convert(),
                                 pygame.image.load("Assets/Sprite/barry_mom/back2.png").convert()]
         self.end_game_images = [pygame.image.load("Assets/background/p1_wins.png").convert(),
-                                pygame.image.load("Assets/background/p2_wins.png").convert()]
+                                pygame.image.load("Assets/background/p2_wins.png").convert(),
+                                pygame.image.load("Assets/background/p1_lost.png").convert(),
+                                pygame.image.load("Assets/background/p2_lost.png").convert()]
 
         # map and wall stuff
         self.walls = []
@@ -91,37 +92,59 @@ class Game:
             CLOCK.tick(FPS)
             self.fetch_data_server()
             self.event_handling()
+            self.check_game_state()
             self.check_collision()
             self.character_mechanics()
             self.display()
             pygame.display.update()
 
     # checks collision between player and enemy or barry's mom.
+    # player1.mode = 1 : player 1
+    # player1.mode = 2 : player 2
+
     def check_collision(self):
-        if self.player_1.rect.colliderect(self.target_pos):  # if player 1 collides with barry's mom game over
-            # player 1 victory
-            self.player_1.victory = True
-            self.game_over = True
-            self.player_1.game_over = True
-            self.player_2.game_over = True
-        if self.player_1.rect.colliderect(self.enemy.rect):  # if player 1 collides with wraith, he slows down
-            # slow down player's velocity if hit by enemy
-            self.player_1.velocity = 1
-        else:
-            self.player_1.velocity = 2
+        # used for debugging. uncomment this
+        # self.player_1.victory = True
+        if self.player_1.mode == 1:
+            if self.player_1.rect.colliderect(self.target_pos):  # if player 1 collides with barry's mom game over
+                # game over
+                print("terminating condition")
+                self.player_1.victory = True
+
+            if self.player_1.rect.colliderect(self.enemy.rect):  # if player 1 collides with wraith, he slows down
+                # slow down player's velocity if hit by enemy
+                self.player_1.velocity = 1
+            else:
+                self.player_1.velocity = 2
+
+        elif self.player_1.mode == 2:  # player 2 collides with barry's mom then game over
+            if self.player_1.rect.colliderect(self.target_pos):
+                self.player_1.victory = True  # player 2 wins
 
     def display(self):
-        if not self.game_over:
+        if not (self.player_1.victory or self.player_2.victory):
             self.render_world()
             self.render_characters()
-            # self.draw_path()
+
         else:  # IF GAME OVER
-            if self.player_1.mode == 1 and self.player_1.victory:
+            self.player_1.game_over = True
+
+            if self.player_1.mode == 1 and self.player_1.victory:  # if player 1 wins
                 # if player 1 wins
                 self.screen.blit(self.end_game_images[0], (0, 0))
-            else:
+                # print("player 1 wins")
+            if self.player_1.mode == 2 and not self.player_1.victory:  # then player 2 lost
+                # print("player 2 lost")
+                self.screen.blit(self.end_game_images[3], (0, 0))
+
+            if self.player_1.mode == 2 and self.player_1.victory:  # if player 2 wins
                 # if player 2 wins
                 self.screen.blit(self.end_game_images[1], (0, 0))
+                # print("player 2 wins")
+            if self.player_1.mode == 1 and not self.player_1.victory:  # then player 1 lost
+                # if player 1 lost
+                self.screen.blit(self.end_game_images[2], (0, 0))
+                # print("player 1 lost")
 
         pygame.display.update()
 
@@ -162,10 +185,6 @@ class Game:
                     if self.target_pos.y >= self.target_lower_limit:
                         self.target_down = False
                         self.target_up = True
-            if event.type == VICTORY_WINDOW and (self.player_1.game_over or self.player_2.game_over):
-                time.sleep(5)
-                print("exiting game. Hope you had fun!")
-                sys.exit(0)
 
     # iterates through text file given and detects game objects
     # + - | are walls
@@ -236,5 +255,12 @@ class Game:
         self.screen.blit(self.background, (0, 0))
         # self.draw_grid()
         self.g.draw(self.screen)
+
+    def check_game_state(self):
+        if self.player_1.game_over:
+            time.sleep(5)
+            print("exiting game. Hope you had fun!")
+            sys.exit(0)
+            pass
 
 # m = Game()

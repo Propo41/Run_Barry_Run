@@ -27,7 +27,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.Game">
+  <component name="RunManager" selected="Python.Start_Game (1)">
     <configuration name="Game" type="PythonConfigurationType" factoryName="Python" singleton="false" temporary="true">
       <module name="Run Barry Run" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -142,9 +142,9 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Game" />
         <item itemvalue="Python.Start_Game (1)" />
         <item itemvalue="Python.server" />
+        <item itemvalue="Python.Game" />
         <item itemvalue="Python.test" />
         <item itemvalue="Python.Start_Game" />
       </list>
@@ -176,10 +176,10 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583435728078">
+    <state x="414" y="175" width="1092" height="707" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583515677898">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1583435728078" />
+    <state x="414" y="175" width="1092" height="707" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1583515677898" />
     <state x="701" y="323" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1583423463493">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -196,50 +196,50 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1583418454784" />
-    <state width="1899" height="235" key="GridCell.Tab.0.bottom" timestamp="1583512828805">
+    <state width="1899" height="235" key="GridCell.Tab.0.bottom" timestamp="1583554280014">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1345" height="165" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1366.305.1366.728@-1366.305.1366.728" timestamp="1581043763772" />
-    <state width="1899" height="235" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1583512828805" />
-    <state width="1899" height="235" key="GridCell.Tab.0.center" timestamp="1583512828804">
+    <state width="1899" height="235" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1583554280014" />
+    <state width="1899" height="235" key="GridCell.Tab.0.center" timestamp="1583554280014">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1345" height="165" key="GridCell.Tab.0.center/0.0.1920.1040/-1366.305.1366.728@-1366.305.1366.728" timestamp="1581043763771" />
-    <state width="1899" height="235" key="GridCell.Tab.0.center/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1583512828804" />
-    <state width="1899" height="235" key="GridCell.Tab.0.left" timestamp="1583512828804">
+    <state width="1899" height="235" key="GridCell.Tab.0.center/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1583554280014" />
+    <state width="1899" height="235" key="GridCell.Tab.0.left" timestamp="1583554280014">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1345" height="165" key="GridCell.Tab.0.left/0.0.1920.1040/-1366.305.1366.728@-1366.305.1366.728" timestamp="1581043763771" />
-    <state width="1899" height="235" key="GridCell.Tab.0.left/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1583512828804" />
-    <state width="1899" height="235" key="GridCell.Tab.0.right" timestamp="1583512828805">
+    <state width="1899" height="235" key="GridCell.Tab.0.left/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1583554280014" />
+    <state width="1899" height="235" key="GridCell.Tab.0.right" timestamp="1583554280014">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1345" height="165" key="GridCell.Tab.0.right/0.0.1920.1040/-1366.305.1366.728@-1366.305.1366.728" timestamp="1581043763771" />
-    <state width="1899" height="235" key="GridCell.Tab.0.right/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1583512828805" />
-    <state width="1899" height="348" key="GridCell.Tab.1.bottom" timestamp="1583500581560">
+    <state width="1899" height="235" key="GridCell.Tab.0.right/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1583554280014" />
+    <state width="1899" height="348" key="GridCell.Tab.1.bottom" timestamp="1583516978176">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1583500581560" />
-    <state width="1899" height="348" key="GridCell.Tab.1.center" timestamp="1583500581560">
+    <state width="1899" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1583516978176" />
+    <state width="1899" height="348" key="GridCell.Tab.1.center" timestamp="1583516978175">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="348" key="GridCell.Tab.1.center/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1583500581560" />
-    <state width="1899" height="348" key="GridCell.Tab.1.left" timestamp="1583500581560">
+    <state width="1899" height="348" key="GridCell.Tab.1.center/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1583516978175" />
+    <state width="1899" height="348" key="GridCell.Tab.1.left" timestamp="1583516978175">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="348" key="GridCell.Tab.1.left/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1583500581560" />
-    <state width="1899" height="348" key="GridCell.Tab.1.right" timestamp="1583500581560">
+    <state width="1899" height="348" key="GridCell.Tab.1.left/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1583516978175" />
+    <state width="1899" height="348" key="GridCell.Tab.1.right" timestamp="1583516978176">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="348" key="GridCell.Tab.1.right/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1583500581560" />
-    <state x="461" y="161" key="SettingsEditor" timestamp="1580537913242">
+    <state width="1899" height="348" key="GridCell.Tab.1.right/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1583516978176" />
+    <state x="461" y="161" key="SettingsEditor" timestamp="1583515908005">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="461" y="161" key="SettingsEditor/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1580537913242" />
-    <state x="656" y="342" key="com.intellij.ide.util.TipDialog" timestamp="1583484356148">
+    <state x="461" y="161" key="SettingsEditor/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1583515908005" />
+    <state x="656" y="342" key="com.intellij.ide.util.TipDialog" timestamp="1583549166973">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="656" y="342" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1583484356148" />
+    <state x="656" y="342" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1366.305.1366.728@0.0.1920.1040" timestamp="1583549166973" />
     <state x="-1366" y="305" width="1382" height="763" key="dock-window-1" timestamp="1583496681275">
       <screen x="-1366" y="305" width="1366" height="728" />
     </state>
